@@ -120,8 +120,9 @@ const Main = (props) => {
 				<CardContent>
 					<h3>Live Cases by Country</h3>
 					<Table countries={tableData} />
+					
 					<h3 style={{ marginTop: '25px' }}>World wide new {casesType}</h3>
-					<LineGraph casesType={casesType} />
+					{/* <LineGraph casesType={casesType} /> */}
 				</CardContent>
 			</Card>
 		</div>
