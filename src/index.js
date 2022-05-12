@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import styled from 'styled-components';
+import { BrowserRouter } from 'react-router-dom';
 
 const Wrapper = styled.main`
 
@@ -25,9 +26,11 @@ code {
 
 ReactDOM.render(
   <React.StrictMode>
+	<BrowserRouter>
     <Wrapper>
     <App />
     </Wrapper>
+	</BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
