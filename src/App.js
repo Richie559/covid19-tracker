@@ -90,8 +90,6 @@ function App() {
     }
   }
   `
-
-
   return (
     <BodyWrapper>
       <div className="app__left">
