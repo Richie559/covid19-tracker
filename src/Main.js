@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 import InfoBox from './components/InfoBox';
 import Map from './components/Map';
 import {
@@ -14,6 +13,7 @@ import { sortData, prettyPrintStat } from './util';
 import numeral from 'numeral';
 import LineGraph from './components/LineGraph';
 import 'leaflet/dist/leaflet.css';
+import styled from 'styled-components'
 
 const Main = (props) => {
 	const [countries, setCountries] = useState([]);
@@ -67,8 +67,40 @@ const Main = (props) => {
 		props.onCountry(e.target.value);
 	};
 
+	const BodyWrapper = styled.main`
+	background-color: white;
+	  display: flex;
+	  justify-content: space-evenly;
+	  padding: 20px;
+	  width: 100vw;
+	  height: 100vh;
+  
+	app__header{
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	  margin-bottom: 20px;
+	  
+	}
+	
+	.app__left {
+	  flex: 0.9;
+	}
+	
+	.app__stats{
+	  display: flex;
+	  justify-content: space-between;
+	}
+	
+	@media (max-width: 990px) {
+	  .app{
+		flex-direction: column;
+	  }
+	}
+	`
+
 	return (
-		<div className='app'>
+		<BodyWrapper>
 			<div className='app__left'>
 				<div className='app__header'>
 					<h1>COVID-19 tracker</h1>
@@ -125,7 +157,7 @@ const Main = (props) => {
 					{/* <LineGraph casesType={casesType} /> */}
 				</CardContent>
 			</Card>
-		</div>
+		</BodyWrapper>
 	);
 };
 
